@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam Tovey: My portfolio</title>
+
     <!-- Link CSS style sheet-->
     <link rel="stylesheet" type="text/css" href="style.css">
+
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Add font families -->
+    <link href='https://fonts.googleapis.com/css?family=Over the Rainbow' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Sulphur Point' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Unlock' rel='stylesheet'>
+
 </head>
+
+
 <body>
     <header>
         <div id="social-links">
             <ul>
             <!-- Add font awesome icons -->
-            <li><a href="https://www.facebook.com/samtovey13/" class="fa fa-facebook">/samtovey13</a></li>
-            <li><a href="https://github.com/samtovey13" class="fa fa-github">/samtovey13</a></li>
-            <li><a href="https://uk.linkedin.com/in/sam-tovey" class="fa fa-linkedin">/sam-tovey</a></li>
+            <li><a href="https://www.facebook.com/samtovey13/"><i class="fa fa-facebook"></i>/samtovey13</a></li>
+            <li><a href="https://github.com/samtovey13"><i class="fa fa-github"></i>/samtovey13</a></li>
+            <li><a href="https://uk.linkedin.com/in/sam-tovey"><i class="fa fa-linkedin"></i>/sam-tovey</a></li>
             </ul>
         </div>
         <address>
@@ -26,12 +36,13 @@
 
     <main>
     <section id="profile">
-        <h1>Sam Tovey: My Portfolio</h1>
+        <h1>Sam Tovey:</h1>
+        <p>About Me</p>
 
-        <figure>
+        <figure id="headshot-fig">
             <img src="headshot.JPG" 
                 alt="headshot of Sam Tovey"
-                width=800px>
+                id="headshot-img">
             <figcaption>Here is Sam looking rather windswept on a recent visit to Krakow, just before the lockdown.</figcaption>
         </figure>
 
@@ -108,7 +119,7 @@
 
     </aside>
 
-    <form method="post" action="https://poll.pollcode.com/47118343">
+    <form class="vote-form" method="post" action="https://poll.pollcode.com/47118343">
         <div>
             <div>
                 <strong>Are you worried about the future after Covid-19?</strong>
