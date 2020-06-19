@@ -1,17 +1,52 @@
+/* Color theme:
+#283D3B dark teal
+#197278 mid teal
+#EDDDD4 off-white
+#C44536 coral
+#772E25 wine
+*/
+
 body {
-    background-color: rgba(117, 29, 29, 0.658);
+    background-color: #751d1da8;
     font-family: 'Sulphur Point';
     margin: auto;
     padding: 0;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "main interview"
+        "main advert"
+        "main vote-form"
+        "footer footer";
 }
-
 
 header {
     color: white;
     background-color: black;
     padding: 10px;
     margin: 0;
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+.interview {
+    grid-area: interview;
+}
+
+.advert {
+    grid-area: advert;
+}
+
+.vote-form {
+    grid-area: vote-form;
+}
+
+footer {
+    grid-area: footer;
 }
 
 #social-links ul {
@@ -61,9 +96,15 @@ h1 + p {
 }
 
 #headshot-fig {
-    max-width: 80%;
+    background-color: rgba(255, 255, 255, 0.493);
+    border-radius: 10px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0;
 }
 
 #headshot-img {
-    max-width: 100%;
+    max-width:100%;
+    border-radius: 10px;
 }
+
