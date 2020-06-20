@@ -7,11 +7,16 @@
 */
 
 body {
-    background-color: #751d1da8;
+    background-image: url(bookshelf.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Sulphur Point';
+    color: #283D3B;
     margin: auto;
-    padding: 0;
+    padding: 10px;
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
         "header header"
@@ -22,36 +27,20 @@ body {
 }
 
 header {
-    color: white;
-    background-color: black;
-    padding: 10px;
-    margin: 0;
+    color: #EDDDD4;
+    background-color: #197278;
+    margin: -10px;
     grid-area: header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-
-main {
-    grid-area: main;
-}
-
-.interview {
-    grid-area: interview;
-}
-
-.advert {
-    grid-area: advert;
-}
-
-.vote-form {
-    grid-area: vote-form;
-}
-
-footer {
-    grid-area: footer;
-}
-
 #social-links ul {
     list-style: none;
     padding-left: 0;
+    display: flex;
+    flex-direction: row;
 }
 
 /* separate with a space selects any li inside a ul inside id="social-links" */
@@ -60,18 +49,23 @@ footer {
     font-family: 'Unlock';
     border: 1px solid white;
     border-radius: 10px;
-    padding: 2px;
-    margin: 5px;
+    padding: 10px;
+    margin: 2px 10px;
 }
 
 #social-links ul li a {
     text-decoration: none;
     color: white;
+    display: block;
 }
-
 
 i {
     padding: 0 4px;
+}
+
+.contact-email {
+    padding: 10px;
+    margin: 10px;
 }
 
 address a {
@@ -79,7 +73,26 @@ address a {
 }
 
 main {
-    margin: 10px;
+    background-color: #edddd480;
+    border-radius: 20px;
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+        "title these-days"
+        "background-info background-info";
+    padding: 15px;
+}
+
+#title {
+    grid-area: title;
+}
+
+#these-days {
+    grid-area: these-days;
+}
+
+#background-info {
+    grid-area: background-info;
 }
 
 h1 {
@@ -96,7 +109,8 @@ h1 + p {
 }
 
 #headshot-fig {
-    background-color: rgba(255, 255, 255, 0.493);
+    background-color: #283D3B;
+    color: #EDDDD4;
     border-radius: 10px;
     max-width: 100%;
     padding: 20px;
@@ -106,5 +120,46 @@ h1 + p {
 #headshot-img {
     max-width:100%;
     border-radius: 10px;
+}
+
+
+.interview {
+    grid-area: interview;
+    background-color: #772E25;
+    color: #EDDDD4;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.article-images {
+    float: left;
+}
+.article-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.advert {
+    grid-area: advert;
+    padding: 10px;
+    background-color: #197278;
+    color: #EDDDD4;
+}
+
+.vote-form {
+    grid-area: vote-form;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        background-repeat: repeat;
+
+    }
 }
 
