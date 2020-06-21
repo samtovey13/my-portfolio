@@ -8,7 +8,6 @@
 
 body {
     background-image: url(bookshelf.JPG);
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Sulphur Point';
@@ -73,14 +72,18 @@ address a {
 }
 
 main {
-    background-color: #edddd480;
+    background-color: #edddd4ab;
     border-radius: 20px;
     grid-area: main;
     display: grid;
     grid-template-areas: 
-        "title these-days"
+        "title headshot"
+        "these-days headshot"
         "background-info background-info";
     padding: 15px;
+    grid-auto-rows: min-content;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
 }
 
 #title {
@@ -108,6 +111,10 @@ h1 + p {
     margin: 0px;
 }
 
+main p {
+    font-size: 120%;
+}
+
 #headshot-fig {
     background-color: #283D3B;
     color: #EDDDD4;
@@ -115,11 +122,13 @@ h1 + p {
     max-width: 100%;
     padding: 20px;
     margin: 0;
+    grid-area: headshot;
 }
 
 #headshot-img {
-    max-width:100%;
     border-radius: 10px;
+    max-width: 100%;
+    min-width: 500px;
 }
 
 
@@ -132,13 +141,16 @@ h1 + p {
 }
 
 .article-images {
-    float: left;
+    display: block;
+    margin: 20px;
 }
 .article-img {
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .advert {
@@ -156,10 +168,21 @@ footer {
     grid-area: footer;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
     body {
         background-repeat: repeat;
+        background-size: cover;
 
     }
 }
 
+@media screen and (max-width: 1300px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "main main"
+            "interview advert"
+            "interview vote-form"
+            "footer footer";
+    }
+}
