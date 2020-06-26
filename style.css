@@ -104,8 +104,7 @@ h1 {
     margin: 0px;
 }
 
-/* selects any p that directly follows an h1 */
-h1 + p {
+.sub-heading {
     font-size: 3em;
     font-family: 'Over the Rainbow';
     margin: 0px;
@@ -129,12 +128,13 @@ main p {
     border-radius: 10px;
     max-width: 100%;
     min-width: 500px;
+    display: block;
 }
 
 
 .interview {
     grid-area: interview;
-    background-color: #772E25;
+    background-color: #772f25cc;
     color: #EDDDD4;
     border-radius: 20px;
     padding: 10px;
@@ -156,24 +156,30 @@ main p {
 .advert {
     grid-area: advert;
     padding: 10px;
-    background-color: #197278;
+    background-color: #C44536cc;
+    border-radius: 20px;
     color: #EDDDD4;
+}
+.advert h2 {
+    display: inline-block;
 }
 
 .vote-form {
     grid-area: vote-form;
+    background-color: #772E25cc;
+    border-radius: 20px;
+    color: #EDDDD4
 }
 
 footer {
     grid-area: footer;
-}
-
-@media screen and (max-width: 800px) {
-    body {
-        background-repeat: repeat;
-        background-size: cover;
-
-    }
+    color: #EDDDD4;
+    background-color: #197278;
+    margin: -10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 @media screen and (max-width: 1300px) {
@@ -184,5 +190,26 @@ footer {
             "interview advert"
             "interview vote-form"
             "footer footer";
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-repeat: repeat;
+        background-size: cover;
+        grid-template-areas:
+            "header header"
+            "main main"
+            "interview interview"
+            "advert advert"
+            "vote-form vote-form"
+            "footer footer";
+        }
+    main {
+        grid-template-areas:
+            "title title"
+            "headshot headshot"
+            "these-days these-days"
+            "background-info background-info";
     }
 }
