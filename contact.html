@@ -28,30 +28,54 @@
 
     <main id="contact-form-main">
         <form class="contact-form" action="" method="post">
-            <fieldset class="name"><label for="name">Name:</label>
-            <input type="text" name="name" id="name-input"></fieldset>
-
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email-input">
-
-            <!-- radio/checkboxes My equiry is about... work/hobbies/something else -->
-            <fieldset class="radio-fieldset">
-                <legend>My enquiry is about...</legend>
-                <input type="radio" id="work" name="subject" value="work">
-                <label for="work">Work</label>
-                <input type="radio" id="hobbies" name="subject" value="hobbies">
-                <label for="hobbies">Hobbies</label>
-                <input type="radio" id="other" name="subject" value="other">
-                <label for="other">Other (please specify):
-                    <input type="text" placeholder="Enter a subject here">
-                </label>
+            <fieldset class="name-email-fieldset">
+                <label id="name-label" for="name">Name:</label>
+                <input type="text" name="name" id="name-input">
+                <br>
+                <label id="email-label" for="email">Email:</label>
+                <input type="email" name="email" id="email-input">
             </fieldset>
 
-            <textarea>
-            </textarea>
+            <!-- radio/checkboxes My equiry is about... work/hobbies/something else -->
+            <fieldset class="radio-fieldset" id="subject-fieldset">
+                <legend>My enquiry is about...</legend>
+                <ul>
+                    <li><input type="radio" id="work" name="subject" value="work">
+                        <label for="work">Work</label></li>
+                    <li><input type="radio" id="hobbies" name="subject" value="hobbies">
+                        <label for="hobbies">Hobbies</label></li>
+                    <li><input type="radio" id="other" name="subject" value="">
+                        <label for="other">Other (please specify):
+                            <input type="text" id="other-input" placeholder="Enter a subject here">
+                        </label></li>
+                </ul>
+                <script>
+                    var checkFunction = function() {
+                        var other = document.getElementById('other');
+                        var otherInput = document.getElementById('other-input');
+                        if (other.checked) {
+                            otherInput.style.display = "inline-block";
+                        }
+                        else {
+                            otherInput.style.display = "none";
+                        }    
+                    }
+                    var subjectFieldset = document.getElementById('subject-fieldset');
+                    subjectFieldset.addEventListener('click', checkFunction, false);
+                </script>
+            </fieldset>
 
-            <input type="submit" value="Submit"> 
-            <input type="reset">
+            <fieldset>
+                <label for="message">Enter your message here:</label>
+                <textarea id="message" name="message">
+                </textarea>
+            </fieldset>
+
+            <fieldset id="buttons">
+                <input type="submit" value="Submit message"> 
+                <input type="reset" value="Clear form">
+            </fieldset>
+        
         </form>
         
     </main>
