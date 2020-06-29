@@ -71,7 +71,8 @@
             </fieldset>
 
             <fieldset id="buttons">
-                <input type="reset" value="Clear" class="reset-button">
+                <input type="reset" value="Clear" class="reset-button" 
+                    onclick="return confirm('Are you sure you want to reset?');">
 
                 <input type="submit" value="Submit" class="submit-button" onclick="submitFunction()"> 
 
