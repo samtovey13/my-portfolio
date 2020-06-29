@@ -13,6 +13,9 @@ body {
     font-family: 'Sulphur Point';
     color: #283D3B;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -62,7 +65,6 @@ address a {
 }
 
 .grid-wrapper {
-    padding: 20px;    
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 3fr 1fr;
@@ -75,16 +77,20 @@ address a {
 main {
     background-color: #edddd4ab;
     border-radius: 20px;
+    padding: 15px;
+    flex: 1;
+    margin: 20px;
+}
+.about-me-main {
     grid-area: main;
     display: grid;
+    grid-auto-rows: min-content;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "title headshot"
         "these-days headshot"
         "background-info background-info";
-    padding: 15px;
-    grid-auto-rows: min-content;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
 }
 
 #title {
@@ -179,6 +185,8 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: static;
+    bottom: 0;
 }
 
 /*contact form*/
@@ -264,7 +272,7 @@ textarea {
             "advert advert"
             "vote-form vote-form";
         }
-    main {
+    .about-me-main {
         grid-template-areas:
             "title title"
             "headshot headshot"
