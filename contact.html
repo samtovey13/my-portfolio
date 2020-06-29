@@ -72,7 +72,27 @@
 
             <fieldset id="buttons">
                 <input type="reset" value="Clear" class="reset-button">
-                <input type="submit" value="Submit" class="submit-button"> 
+
+                <input type="submit" value="Submit" class="submit-button" onclick="submitFunction()"> 
+
+                <script>
+                    function submitFunction() {
+                        var other = document.getElementById('other');
+                        var otherInput = document.getElementById('other-input');
+                        if (other.checked) {
+                            other.value = otherInput.value;
+                        }
+                        var name = document.getElementById('name-input');
+                        var email = document.getElementById('email-input');
+                        var subject = document.querySelector('[name=subject]:checked');
+                        var message = document.getElementById('message');
+                        var formText = 
+                        alert("Name: " + name.value + 
+                            "\nEmail: " + email.value +
+                            "\nSubject: " + subject.value +
+                            "\nMessage: " + message.value);
+                    }
+                </script>
             </fieldset>
         
         </form>
